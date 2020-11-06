@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  mfe_template:
-    image: "mfe_template:dev"
+  template:
+    image: "template"
     build:
       context: .
       dockerfile: Dockerfile
