@@ -1,9 +1,9 @@
 {
-    'port': {{ port }},
-    'exposedModules': {
+    "port": {{ port }},
+    "exposedModules": {
         {% for module in exposedModules %}
             {% for key, value in module.items() %}
-        '{{ key }}': '{{ value }}''
+        "{{ key }}": "{{ value }}"
             {% endfor %}
         {% endfor %}
     }
