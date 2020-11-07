@@ -1,5 +1,5 @@
 {
-  "name": " ",
+  "name": "{{ name }}",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack-cli serve -c ./preconfig/webpack.config.js --host 0.0.0.0",
     "build": "webpack -c ./preconfig/webpack.config.js --mode production",
-    "serve": "serve dist -p 0",
+    "serve": "serve dist -p {{ port }}",
     "clean": "rm -rf dist"
   },
   "dependencies": {

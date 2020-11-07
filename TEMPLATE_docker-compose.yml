@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  {% for name, values in components.items() %}
+  {{ name }}:
+    image: '{{ name }}'
+    build:
+      context: './{{ name }}'
+      dockerfile: Dockerfile
+    volumes:
+      - './{{ name }}:/app'
+      - '/app/node_modules'
+    ports:
+      - {{ values.port }}:{{ values.port }}
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  {% endfor %}
