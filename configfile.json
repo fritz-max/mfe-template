@@ -1,4 +1,6 @@
 {
-    "port": 0,
-    "exposedModules": {}
+    "port": 3000,
+    "exposedModules": {
+        "./App": "./src/App"
+    }
 }
