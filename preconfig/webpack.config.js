@@ -2,9 +2,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const deps = require("../package.json").dependencies;
-// const moduleName = require("./package.json").name.split("/")[1];
 const moduleName = require("../package.json").name;
-const extConfig = require("../configfile.json");
+const extConfig = require("../config.json");
 
 module.exports = {
   entry: {
@@ -35,7 +34,9 @@ module.exports = {
       name: moduleName,
       library: { type: "var", name: moduleName },
       filename: "remoteEntry.js",
-      exposes: extConfig.exposedModules,
+      exposes: {
+        "./Service": "./src/Service"
+      },
       shared: {
         "react": { singleton: true, requiredVersion: deps.react },
         "react-dom": { singleton: true, requiredVersion: deps["react-dom"] }

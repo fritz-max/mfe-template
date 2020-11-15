@@ -1,7 +1,7 @@
 import React from "react";
 
-const App = () => (
+const Service = () => (
   <p>Hello Skytem! This is your new Microfrontend</p>
 );
 
-export default App;
+export default Service;
