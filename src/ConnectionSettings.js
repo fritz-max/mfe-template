@@ -1,6 +1,6 @@
 const config = require("../config.json");
 
-class Connection {
+class ConnectionSettings {
     constructor() {
         this.url = "ws://"+config.router+":8080/ws"
         this.realm = "realm"
@@ -17,4 +17,4 @@ class Connection {
     }
 }
 
-export default Connection
+export default ConnectionSettings
