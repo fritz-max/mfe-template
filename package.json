@@ -1,5 +1,5 @@
 {
-  "name": "prototype_mfe",
+  "name": "prototype_mfe1",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node ./preconfig/configurate.js && webpack-cli serve -c ./preconfig/webpack.config.js --host 0.0.0.0",
     "build": "webpack -c ./preconfig/webpack.config.js --mode production",
-    "serve": "serve dist -p 1000",
+    "serve": "serve dist -p 3002",
     "clean": "rm -rf dist"
   },
   "dependencies": {
