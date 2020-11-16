@@ -2,8 +2,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const deps = require("../package.json").dependencies;
-const moduleName = require("../package.json").name;
-const extConfig = require("../config.json");
+const name = require("../config.json").name;
+const port = require("../config.json").port;
 
 module.exports = {
   entry: {
@@ -12,7 +12,7 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: extConfig.port,
+    port: port,
   },
   output: {
     publicPath: "auto",
@@ -31,8 +31,8 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: moduleName,
-      library: { type: "var", name: moduleName },
+      name: name,
+      library: { type: "var", name: name },
       filename: "remoteEntry.js",
       exposes: {
         "./Service": "./src/Service"
@@ -44,7 +44,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      excludeChunks: [moduleName],
+      excludeChunks: [name],
     }),
   ],
 };

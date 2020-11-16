@@ -38,3 +38,5 @@ fs.writeFile('./package.json', JSON.stringify(package, null, 2), (err) => {
         console.log(err);
     }
 });
+
+console.log("Configurator script finished.")
