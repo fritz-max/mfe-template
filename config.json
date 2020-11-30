@@ -2,10 +2,14 @@
     "name": "prototype_mfe1",
     "port": 3002,
     "router": "localhost",
-    "subscribeTopics": [
-        "subtopic1", "subtopic2"
-    ],
-    "publishTopics": [
-        "pubtopic1"
-    ]
+    "topics": {
+        "subscribeTopics": [
+            "subTopic1"
+        ],
+        "publishTopics": [], 
+        "callerTopics": [
+            "callTopic1"
+        ],
+        "calleeTopics": []
+    }
 }
